@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+using System.IO;
 
 namespace BestBuyBestPractices
 {
@@ -10,6 +14,10 @@ namespace BestBuyBestPractices
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
+
+            string connString = config.GetConnectionString("DefaultConnection");
+            IDbConnection conn = new MySqlConnection(connString);
+
 
         }
     }

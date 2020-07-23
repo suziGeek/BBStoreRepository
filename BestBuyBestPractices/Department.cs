@@ -4,7 +4,12 @@ using System.Text;
 
 namespace BestBuyBestPractices
 {
-    class Department
+    public class Department
     {
+        public Department()
+            {
+            }
+        public int DepatmentId { get; set; }
+        public string Name { get; set; }
     }
 }

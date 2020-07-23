@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BestBuyBestPractices
 {
-    interface IDepartmentRepository
+    public interface IDepartmentRepository
     {
+        IEnumerable<Department> GetAllDepartments();// stubbed out method
     }
 }
