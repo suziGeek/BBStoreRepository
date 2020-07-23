@@ -18,6 +18,23 @@ namespace BestBuyBestPractices
             string connString = config.GetConnectionString("DefaultConnection");
             IDbConnection conn = new MySqlConnection(connString);
 
+            var repo = new DapperDepartmentRepository(conn);
+
+            Console.WriteLine("Type a new Department Name");
+
+            var newDepartment = Console.ReadLine();
+
+            repo.InsertDepartment(newDepartment);
+
+            var departments = repo.GetAllDepartments();
+
+
+            foreach (var dept in departments) 
+            {
+                Console.WriteLine(dept.Name);
+            }
+
+
 
         }
     }
